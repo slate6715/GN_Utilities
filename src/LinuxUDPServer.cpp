@@ -9,6 +9,7 @@
 #include <poll.h>
 #include <sstream>
 #include "miscutils.h"
+#include "strings.h"
 
 namespace util {
 
@@ -27,9 +28,6 @@ LinuxUDPServer::~LinuxUDPServer(void)
     close(_sockfd);
 }
 
-
-LinuxUDPServer::~LinuxUDPServer() {
-}
 
 void LinuxUDPServer::connect() {
     struct sockaddr_in serv_addr, cli_addr;

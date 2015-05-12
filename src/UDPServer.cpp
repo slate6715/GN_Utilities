@@ -17,11 +17,6 @@ UDPServer::UDPServer(const UDPServer& orig) {
 
 UDPServer::~UDPServer(void)
 {
-    close(_sockfd);
-}
-
-
-UDPServer::~UDPServer() {
 }
 
 void UDPServer::connect() {

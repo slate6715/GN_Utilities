@@ -16,6 +16,9 @@
 #ifdef _WIN32
 #include <cstdio>
 #endif
+#include "time.h"
+#include "stdio.h"
+
 
 namespace util {
     

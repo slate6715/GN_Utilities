@@ -3,7 +3,7 @@
 
 #ifndef _WIN32
 
-#include "udpserver.h"
+#include "UDPServer.h"
 
 namespace util{
 
@@ -11,12 +11,10 @@ class LinuxUDPServer :
 	public UDPServer
 {
 public:
-	LinuxUDPServer(void);
-	virtual ~LinuxUDPServer(void);
+    LinuxUDPServer(void);
 
-    LinuxUDPServer();
-	LinuxUDPServer(const char *addr, unsigned int port) : UDPServer(addr, port) {};
-    LinuxUDPServer(const UDPServer& orig);
+    LinuxUDPServer(const char *addr, unsigned int port);
+    LinuxUDPServer(const LinuxUDPServer& orig);
     
     virtual ~LinuxUDPServer();
     
@@ -24,7 +22,9 @@ public:
     void connect(const char *addr, unsigned int port);
 
     int accept_connection(unsigned int block_ms);
-
+    
+private:
+    unsigned int _sockfd;
 };
 
 } // namespace util

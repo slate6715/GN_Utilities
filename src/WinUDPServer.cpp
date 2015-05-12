@@ -1,5 +1,7 @@
 #include "WinUDPServer.h"
 
+#ifdef WIN32
+
 namespace util {
 
 WinUDPServer::WinUDPServer(void)
@@ -43,3 +45,5 @@ int WinUDPServer::accept_connection(unsigned int block_ms) {
 }
 
 } // namespace util
+
+#endif //ifdef WIN32

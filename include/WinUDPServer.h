@@ -1,7 +1,9 @@
 #ifndef WINUDPSERVER_H
 #define WINUDPSERVER_H
 
-#include "c:\storage\research\code\gnutilities\include\udpserver.h"
+#ifdef WIN32
+
+#include "UDPServer.h"
 
 namespace util {
 
@@ -23,5 +25,7 @@ public:
 };
 
 } // namespace util
+
+#endif // ifdef WIN32
 
 #endif // WIN32UDPSERVER_H

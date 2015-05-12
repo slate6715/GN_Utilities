@@ -16,7 +16,7 @@ TarFile::TarFile(void) {
     ownerid = 0;
     groupid = 0;
     filesize = 0;
-    lastmod = 0;
+//    lastmod = 0;
     checksum = 0;
     type_id = 0;
     linkedfile[0] = '\0';
@@ -56,7 +56,7 @@ bool TarFile::loadData(const unsigned char *data, size_t data_size) {
     filemode = extractUInt(data, 100, 8);
     ownerid = extractUInt(data, 108, 8);
     groupid = extractUInt(data, 116, 8);
-    lastmod = extractULong(data, 136, 12);
+//    lastmod = extractULong(data, 136, 12);
     checksum = extractULong(data, 148, 8);
     type_id = (unsigned char) extractUInt(data, 156, 1);
     extractChar(data, linkedfile, 157, 100);

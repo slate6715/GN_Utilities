@@ -3,16 +3,16 @@
 
 #ifndef _WIN32
 
+#include <string>
+
 namespace util{
 
 class UDPServer
 {
 public:
-	UDPServer(void);
-	virtual ~UDPServer(void);
+    UDPServer(void);
 
-    UDPServer();
-    UDPServer(const char *addr, unsigned int port) : UDPServer(addr, port) {};
+    UDPServer(const char *addr, unsigned int port) {};
     UDPServer(const UDPServer& orig);
     
     virtual ~UDPServer();
@@ -22,6 +22,9 @@ public:
 
     int accept_connection(unsigned int block_ms);
 
+protected:
+    unsigned int _port;
+    std::string _addr;
 };
 
 } // namespace util
