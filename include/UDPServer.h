@@ -1,41 +1,32 @@
-/* 
- * File:   UDPServer.h
- * Author: George Noel
- * 
- * Creates and manages a simple UDP server with methods for transmitting common
- * data types
- *
- * Created on 14 March 2015, 07:20
- */
-
 #ifndef UDPSERVER_H
-#define	UDPSERVER_H
+#define UDPSERVER_H
 
-#include <string>
+#ifndef _WIN32
 
-namespace util {
-    
-    
-class UDPServer {
+namespace util{
+
+class UDPServer
+{
 public:
+	UDPServer(void);
+	virtual ~UDPServer(void);
+
     UDPServer();
-    UDPServer(const char *addr, unsigned int port);
+    UDPServer(const char *addr, unsigned int port) : UDPServer(addr, port) {};
     UDPServer(const UDPServer& orig);
     
-	virtual ~UDPServer() {};
+    virtual ~UDPServer();
     
-	virtual void connect() {};
-	virtual void connect(const char *addr, unsigned int port) {};
+    void connect();
+    void connect(const char *addr, unsigned int port);
 
-	virtual int accept_connection(unsigned int block_ms) { return 0; };
-    
-protected:
-    std::string _addr;
-    unsigned int _port;
-    int _sockfd;
+    int accept_connection(unsigned int block_ms);
+
 };
 
 } // namespace util
 
-#endif	/* UDPSERVER_H */
+#endif // _WIN32
+
+#endif // if UDPSERVER_H
 
