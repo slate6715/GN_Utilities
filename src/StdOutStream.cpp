@@ -5,7 +5,7 @@
  * Created on October 5, 2012, 4:28 PM
  */
 
-#include <iostream>
+#include "stdafx.h"
 #include "StdOutStream.h"
 
 using namespace std;

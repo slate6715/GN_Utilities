@@ -5,8 +5,8 @@
  * Created on October 30, 2012, 8:29 AM
  */
 
+#include "stdafx.h"
 #include "TarReader.h"
-#include "miscutils.h"
 #include "TarFile.h"
 
 namespace util {

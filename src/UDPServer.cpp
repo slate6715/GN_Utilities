@@ -1,6 +1,4 @@
-
-#ifndef _WIN32
-
+#include "stdafx.h"
 #include "UDPServer.h"
 
 namespace util {
@@ -40,5 +38,3 @@ int UDPServer::accept_connection(unsigned int block_ms) {
 
 
 } // namespace util
-
-#endif // _WIN32

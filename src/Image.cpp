@@ -5,6 +5,7 @@
  * Created on October 26, 2012, 7:45 AM
  */
 
+#include "stdafx.h"
 #include "Image.h"
 #include <limits.h>
 #include "miscutils.h"
@@ -71,26 +72,46 @@ void Image::loadData(std::unique_ptr<util::StoreQueryResults> &rs, unsigned int 
 
 // Load the image from disk using the path already set
 
-bool Image::loadImage(const char *prefix) {
+bool Image::loadImageP(const char *prefix) {
     std::string fullname = prefix;
     fullname.append("/");
     fullname.append(_img_path);
-    _image = cv::imread(fullname);
-
-    if (_image.empty())
-        return false;
-
-    _x_size = _image.cols;
-    _y_size = _image.rows;
-
-    return true;
+	return loadImage(fullname.c_str());
 }
 
 // Load the image from disk based on the given path
 
-bool Image::loadImage(const char *prefix, const char *filename) {
+bool Image::loadImageP(const char *prefix, const char *filename) {
     _img_path = filename;
     return loadImage(prefix);
+}
+
+bool Image::loadImage(const char *filename) {
+	_image = cv::imread(filename);
+
+	if (_image.empty())
+		return false;
+
+	_x_size = _image.cols;
+	_y_size = _image.rows;
+
+	return true;
+}
+
+bool Image::loadImage(std::vector<unsigned char> &img) {
+	_image = cv::imdecode(img, CV_LOAD_IMAGE_COLOR);
+
+	if (_image.empty())
+		return false;
+
+	_x_size = _image.cols;
+	_y_size = _image.rows;
+
+	return true;
+}
+
+void Image::saveImage(const char *filename) {
+	cv::imwrite(filename, _image);
 }
 
 // A method to manually set the image (and path) for this object

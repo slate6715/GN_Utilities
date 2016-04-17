@@ -5,6 +5,7 @@
  * Created on October 1, 2012, 2:13 PM
  */
 
+#include "stdafx.h"
 #include <cstring>
 #include <algorithm>
 #include <stdio.h>

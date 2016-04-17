@@ -8,11 +8,12 @@
 #ifndef MISCUTILS_H
 #define	MISCUTILS_H
 
-
 #include <vector>
 #include <string>
 #include <fstream>
 #include <limits>
+#include <boost/asio/io_service.hpp>
+
 #if defined(_WIN32) && defined(USE_MFC)
 #include <afx.h>
 #endif
@@ -21,12 +22,12 @@
 #include <opencv2/opencv.hpp>
 #endif
 
-#define _T(a)   a
+// #define _T(a)   a
 #undef NULL
 #define NULL 0
 
 namespace util {
-    
+
 bool isImageFile(const char *filename);
 bool isImageFile(const wchar_t *filename);
 

@@ -5,6 +5,7 @@
  * Created on September 26, 2012, 11:29 AM
  */
 
+#include "stdafx.h"
 #include "DBase.h"
 
 namespace util {

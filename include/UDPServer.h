@@ -1,9 +1,6 @@
-#ifndef UDPSERVER_H
-#define UDPSERVER_H
+#pragma once
 
-#ifndef _WIN32
-
-#include <string>
+#include <boost/asio.hpp>
 
 namespace util{
 
@@ -29,7 +26,5 @@ protected:
 
 } // namespace util
 
-#endif // _WIN32
 
-#endif // if UDPSERVER_H
 

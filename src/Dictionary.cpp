@@ -5,13 +5,12 @@
  * Created on October 4, 2012, 3:10 PM
  */
 
+#include "stdafx.h"
+
 #ifdef USE_WORDNET
 
 #include "Dictionary.h"
 #include "tinyxml.h"
-#include <fstream>
-#include <iostream>
-#include "GNUtilities.h"
 #include "wn.h"
 
 namespace util {

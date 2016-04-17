@@ -5,9 +5,7 @@
  * Created on October 1, 2012, 2:13 PM
  */
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <sstream>
+#include "stdafx.h"
 #include "ConfigFile.h"
 #include "BufferedReader.h"
 #include "miscutils.h"

@@ -5,6 +5,9 @@
  * Created on October 3, 2012, 2:06 PM
  */
 
+#pragma once
+
+#include "stdafx.h"
 #include "BufferedInsert.h"
 #include <memory>
 

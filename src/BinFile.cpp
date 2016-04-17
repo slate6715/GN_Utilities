@@ -5,13 +5,10 @@
  * Created on April 5, 2013, 9:03 AM
  */
 
+#pragma once
+
+#include "stdafx.h"
 #include "BinFile.h"
-#include <iostream>
-#include <fstream>
-#include <cstring>
-#include <sstream>
-#include <sys/stat.h>
-#include "miscutils.h"
 
 namespace util {
    

@@ -1,13 +1,14 @@
-#include "GNUtilities.h"
+#include "stdafx.h"
+
 #ifdef USE_OPENCV
-#include "opencv.hpp"
+#include "opencv2/opencv.hpp"
 #include <cstdio>
 
 int writemat(cv::Mat &to_write, const char *filename) {
     FILE *writer;
 
-    if ((writer = fopen(filename, "w")) != NULL)
-        return 0;
+	if (fopen_s(&writer, filename, "w") != 0)
+		return 0;
 
 	if ((to_write.type() == CV_64F) || (to_write.type() == CV_32F))
 	{

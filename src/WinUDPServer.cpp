@@ -1,6 +1,8 @@
-#include "WinUDPServer.h"
+#include "stdafx.h"
 
 #ifdef WIN32
+
+#include "WinUDPServer.h"
 
 namespace util {
 

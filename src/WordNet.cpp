@@ -5,18 +5,17 @@
  * Created on October 4, 2012, 3:26 PM
  */
 
+
+ // Precompiled headers
+#include "stdafx.h"
+
+using namespace util;
+
 #ifdef USE_WORDNET
 
 #include "WordNet.h"
-#include <stdio.h>
-#include <ctype.h>
-#include <stdlib.h>
-#include <string.h>
 #include <assert.h>
-#include "miscutils.h"
 
-using namespace util;
-        
 #pragma warning (disable:4100)
 
 static const char *Id = "$Id: WordNet.cpp,v 1.166 2011/12/10 wn Exp $";

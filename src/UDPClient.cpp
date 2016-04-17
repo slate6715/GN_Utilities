@@ -1,5 +1,5 @@
+#include "stdafx.h"
 #include "UDPClient.h"
-#include "miscutils.h"
 
 namespace util {
 

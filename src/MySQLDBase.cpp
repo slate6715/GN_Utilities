@@ -5,10 +5,11 @@
  * Created on September 26, 2012, 11:33 AM
  */
 
+#include "stdafx.h"
+
 #ifdef USE_MYSQL
 
 #include "MySQLDBase.h"
-#include <string>
 #include <memory>
 
 namespace util {

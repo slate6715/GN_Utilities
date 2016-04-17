@@ -1,13 +1,13 @@
 
+#include "stdafx.h"
+
 #ifndef _WIN32
 
 #include "LinuxUDPServer.h"
-#include <stdio.h>
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <poll.h>
-#include <sstream>
 #include "miscutils.h"
 #include "strings.h"
 

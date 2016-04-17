@@ -5,6 +5,8 @@
  * Created on October 3, 2012, 11:12 AM
  */
 
+#include "stdafx.h"
+
 #ifdef USE_OPENCV
 
 #include "EMat.h"

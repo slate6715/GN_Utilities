@@ -33,8 +33,24 @@ public:
     void loadData(util::DBase &conn, unsigned int imgID);
     void loadData(std::unique_ptr<util::UseQueryResults> &rs);
     void loadData(std::unique_ptr<util::StoreQueryResults> &rs, unsigned int idx);
-    bool loadImage(const char *prefix);
-    bool loadImage(const char *prefix, const char *path);
+
+	// loadImage, LoadImageP - several functions to load the contents of this image from
+	//                         a file.  LoadImageP loads the file using the path and filename
+	//                         split up with prefix being the filename (path may be pre-loaded
+	//                         already if it isn't specified in the function parameters
+	//		Parameters:  prefix - the actual filename
+	//					 path - the path for the filename
+	//					 filename - the full filename
+	//		Returns:  True for success, false if there's an error
+
+    bool loadImageP(const char *prefix);
+    bool loadImageP(const char *prefix, const char *path);
+	bool loadImage(const char *filename);
+
+	// same function but loads the image from a passed in vector of unsigned char
+	bool loadImage(std::vector<unsigned char> &img);
+
+	void saveImage(const char *filename);
 
     inline void unloadImage() { _image.release(); };
 

@@ -35,6 +35,11 @@
 #include "TarFile.h"
 #include "KeywordMgr.h"
 #include "UDPServer.h"
+#include "../src/TCPServer.cpp"
+#include "TCPServer.h"
+#include "TCPConnection.h"
+#include "CmdTCPConnection.h"
+#include "CommandHandler.h"
 
 #endif	/* GNUTILITIES_H */
 

@@ -1,8 +1,9 @@
+#include "stdafx.h"
+
 #ifdef _WIN32
 
+#include "WS2tcpip.h"
 #include "WinUDPClient.h"
-#include <sstream>
-#include "miscutils.h"
 
 namespace util {
 
@@ -40,11 +41,16 @@ void WinUDPClient::connect() {
     }
      
     //setup address structure
+	char inet_str[INET_ADDRSTRLEN];
+	memset(inet_str, 0, INET_ADDRSTRLEN);
+
     memset((char *) &_si_addr, 0, sizeof(_si_addr));
     _si_addr.sin_family = AF_INET;
     _si_addr.sin_port = htons(_port);
-    _si_addr.sin_addr.S_un.S_addr = inet_addr(_addr.c_str());
-    
+	inet_pton(AF_INET, _addr.c_str(), inet_str);
+// 	_si_addr.sin_addr.S_un.S_addr = inet_str;
+// Re-add the previous line after I test boost
+
 	return;
 }
 

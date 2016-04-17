@@ -1,12 +1,11 @@
+#include "stdafx.h"
+#include <cmath>
 #include "miscutils.h"
-#include <sstream>
 #include <assert.h>
-#include <string>
 #include <cstdarg>
 #include <cstdio>
 #include <algorithm>
 #include <string.h>
-#include <cmath>
 
 using namespace std;
 
@@ -248,7 +247,7 @@ float vecCosine(cv::Mat vec1, cv::Mat vec2) {
     assert((d2.rows == 1) && (d2.cols == 1));
     d2_s = sqrt(d2.at<double>(0,0));
     
-    return m1.at<double>(0,0) / (d1_s * d2_s);
+    return (float) (m1.at<double>(0,0) / (double) (d1_s * d2_s));
 }
 
 float vecDist(cv::Mat vec) {
@@ -260,7 +259,7 @@ float vecDist(cv::Mat vec) {
         results = vec * vec.t();
     else
         results = vec.t() * vec;
-    return std::sqrt(results.at<double>(0));
+    return (float) std::sqrt(results.at<double>(0));
 }
 
 double logVecGausPDF(cv::Mat vec, cv::Mat mean, cv::Mat stddev) {

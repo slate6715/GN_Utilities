@@ -22,8 +22,11 @@ must not be misrepresented as being the original software.
 distribution.
 */
 
-#include <ctype.h>
-#include <stddef.h>
+// George Noel:  This version has been altered from the original author's version for compatability reasons
+
+#pragma once
+
+#include "stdafx.h"
 
 #include "tinyxml.h"
 

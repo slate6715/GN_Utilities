@@ -21,6 +21,8 @@ must not be misrepresented as being the original software.
 distribution.
 */
 
+// (George Noel)  This source has been modified slightly to fit in this library
+#include "stdafx.h"
 
 #ifndef TIXML_USE_STL
 
