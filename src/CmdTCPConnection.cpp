@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "..\include\CmdTCPConnection.h"
 #include <boost/property_tree/json_parser.hpp>
 #include <boost/lexical_cast.hpp>
@@ -141,6 +140,7 @@ namespace util {
 		return _cmd_h->handle_command<CmdTCPConnection<CmdClass>>(_last_cmd, this);
 	}
 
+#ifdef USE_OPENCV
 	template <class CmdClass>
 	void CmdTCPConnection<CmdClass>::send_image(util::Image &img) {
 		std::shared_ptr<std::vector<unsigned char>> imgbuf = std::make_shared<std::vector<unsigned char>>();
@@ -169,5 +169,6 @@ namespace util {
  		do_write();
 
 	}
+#endif
 
 } // Namespace util

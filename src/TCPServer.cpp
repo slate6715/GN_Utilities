@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "TCPServer.h"
 
 using boost::asio::ip::tcp;

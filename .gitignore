@@ -1,0 +1,9 @@
+*.obj
+*.log
+*.sdf
+MSVS/Debug
+MSVS/Release
+MSVS/ipch
+MSVS/.vs
+MSVS/x64
+*.opendb

@@ -1,5 +1,4 @@
 #pragma once
-#include "stdafx.h"
 #include "TCPConnection.h"
 #include <boost/property_tree/ptree.hpp>
 #include "Image.h"
@@ -46,8 +45,10 @@ namespace util {
 		//				y - the vertical size of the image in pixels
 		//				csize - the bit color size
 
+#ifdef USE_OPENCV
 		void send_image(util::Image &img);
 		void send_image(std::shared_ptr<std::vector<unsigned char>> img, const char *imgtype=NULL);
+#endif
 
 		bool execute_json();
 

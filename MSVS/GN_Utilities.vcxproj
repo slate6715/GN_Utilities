@@ -70,7 +70,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>C:\Storage\Code\opencv\Builds\install\include;C:\Storage\Code\boost_1_60_0;$(VC_IncludePath);$(WindowsSDK_IncludePath);../include;./</IncludePath>
+    <IncludePath>C:\Program Files %28x86%29\MySQL\MySQL Connector C++ 1.1.7\include;C:\Storage\Code\opencv\Builds\install\include;C:\Storage\Code\boost_1_60_0;$(VC_IncludePath);$(WindowsSDK_IncludePath);../include;./</IncludePath>
     <SourcePath>$(VC_SourcePath);../src; ./</SourcePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -81,7 +81,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;USE_OPENCV;_USE_MATH_DEFINES;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;USE_OPENCV;USE_MYSQL;_USE_MATH_DEFINES;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
@@ -197,7 +197,9 @@
     <ClCompile Include="..\src\TarFile.cpp" />
     <ClCompile Include="..\src\TarReader.cpp" />
     <ClCompile Include="..\src\TCPConnection.cpp" />
-    <ClCompile Include="..\src\TCPServer.cpp" />
+    <ClCompile Include="..\src\TCPServer.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="..\src\tinystr.cpp" />
     <ClCompile Include="..\src\tinyxml.cpp" />
     <ClCompile Include="..\src\tinyxmlerror.cpp" />
