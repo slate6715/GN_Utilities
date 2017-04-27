@@ -5,10 +5,13 @@
  * Created on April 5, 2013, 9:03 AM
  */
 
-#pragma once
-
+#ifdef _WIN32
 #include "stdafx.h"
+#endif
 #include "BinFile.h"
+#include "miscutils.h"
+#include <fstream>
+#include <cstring>
 
 namespace util {
    
@@ -63,8 +66,14 @@ unsigned int BinFile::loadFile(const char *filename) {
 
 unsigned int BinFile::loadFile(const wchar_t *filename) {
     std::wifstream readfile;
-    
+
+    // Windows has a wide filename parameter, linux uses bytestream to UTF-8
+#ifdef _WIN32    
     readfile.open(filename, std::ios::in | std::ios::binary | std::ios::ate );
+#else
+    readfile.open((const char *) filename, std::ios::in | std::ios::binary | std::ios::ate );
+#endif
+
     unsigned int results = loadFile(readfile);
     readfile.close();
     return results;
@@ -86,7 +95,8 @@ unsigned int BinFile::loadFile(std::wifstream &readfile) {
             resizeBuf((unsigned int) (((double) _buf_size) * (1.0 + GROW_PERCENT)));
         }
 #ifndef _WIN32
-        _size += readfile.read(_data, _buf_size - _size);
+	throw util::RuntimeException("This needs to be fixed!");
+        // _size += readfile.read(_data, _buf_size - _size);
 #else
 		throw util::RuntimeException("BinFile::loadFile - This code not yet ported to Win32");
 #endif

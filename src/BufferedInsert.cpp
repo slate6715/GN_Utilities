@@ -5,9 +5,10 @@
  * Created on October 3, 2012, 2:06 PM
  */
 
-#pragma once
 
+#ifdef _WIN32
 #include "stdafx.h"
+#endif
 #include "BufferedInsert.h"
 #include <memory>
 

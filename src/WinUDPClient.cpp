@@ -1,6 +1,5 @@
-#include "stdafx.h"
-
 #ifdef _WIN32
+#include "stdafx.h"
 
 #include "WS2tcpip.h"
 #include "WinUDPClient.h"

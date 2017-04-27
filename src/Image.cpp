@@ -5,7 +5,9 @@
  * Created on October 26, 2012, 7:45 AM
  */
 
+#ifdef _WIN32
 #include "stdafx.h"
+#endif
 #include "Image.h"
 #include <limits.h>
 #include "miscutils.h"

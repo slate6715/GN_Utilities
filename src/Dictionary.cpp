@@ -5,7 +5,9 @@
  * Created on October 4, 2012, 3:10 PM
  */
 
+#ifdef _WIN32
 #include "stdafx.h"
+#endif
 
 #ifdef USE_WORDNET
 

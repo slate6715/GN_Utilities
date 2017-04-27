@@ -5,10 +5,13 @@
  * Created on October 1, 2012, 2:13 PM
  */
 
+#ifdef _WIN32
 #include "stdafx.h"
+#endif
 #include "ConfigFile.h"
 #include "BufferedReader.h"
 #include "miscutils.h"
+#include <sstream>
 
 namespace util {
     

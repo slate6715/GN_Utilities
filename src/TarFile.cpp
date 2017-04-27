@@ -5,8 +5,11 @@
  * Created on October 30, 2012, 8:38 AM
  */
 
+#ifdef _WIN32
 #include "stdafx.h"
+#endif
 #include "TarFile.h"
+#include "miscutils.h"
 
 namespace util {
     

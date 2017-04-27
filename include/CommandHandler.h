@@ -1,13 +1,29 @@
 #pragma once
 #include <boost/property_tree/ptree.hpp>
+#include <boost/lexical_cast.hpp>
 #include "TCPConnection.h"
 #include "Image.h"
+#include "miscutils.h"
 
 class CmdTCPConnection;
 
 namespace pt = boost::property_tree;
 
 namespace util {
+
+        class UnsupportedCommand : public std::exception
+        {
+        public:
+                UnsupportedCommand(std::string &cmd, std::string &msg) : _cmd(cmd), _msg(msg) {};
+                UnsupportedCommand(const char *cmd, const char *msg) : _cmd(cmd), _msg(msg) {};
+                ~UnsupportedCommand() throw() {};
+                const char *what() { return _msg.c_str(); };
+                const char *cmd() { return _cmd.c_str(); };
+
+        private:
+                std::string _cmd;
+                std::string _msg;
+        };
 
 	class CommandHandler
 	{
@@ -32,7 +48,7 @@ namespace util {
 
 		template <typename Conn>
 		bool handle_command(pt::ptree &cmdtree) {
-			return handle_command_c(cmdtree, NULL);
+			return handle_command_c(cmdtree);
 		}
 
 		template <typename Conn>
@@ -82,20 +98,24 @@ namespace util {
 			return true;
 		}
 
+		// If the connection pointer doesn't exist, then (what do we do????)
+		bool handle_command_c(pt::ptree &cmdtree) {
+
+                        std::string cmd = cmdtree.get<std::string>("cmd");
+
+			// No use for this instance yet
+			if (cmd == "sendimg") {
+                        	throw util::UnsupportedCommand("sendimg",
+                                   "CmdTCPConnection command sendimg received, no connection passed in as param");
+			} 
+                        else {
+                           std::string msg("Unknown CmdTCPConnection command sent via JSON:  ");
+                           msg += cmd;
+                           throw util::IOException(msg);
+                        } 
+			return true;
+		}
 	};
 
-	class UnsupportedCommand : public std::exception
-	{
-	public:
-		UnsupportedCommand(std::string &cmd, std::string &msg) : _cmd(cmd), _msg(msg) {};
-		UnsupportedCommand(const char *cmd, const char *msg) : _cmd(cmd), _msg(msg) {};
-		~UnsupportedCommand() throw() {};
-		const char *what() { return _msg.c_str(); };
-		const char *cmd() { return _cmd.c_str(); };
-
-	private:
-		std::string _cmd;
-		std::string _msg;
-	};
 
 }

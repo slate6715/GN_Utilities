@@ -23,7 +23,9 @@ distribution.
 */
 
 // (GN) This code has been modified slightly to fit in this library
+#ifdef _WIN32
 #include "stdafx.h"
+#endif
 #include "tinyxml.h"
 
 // The goal of the seperate error file is to make the first

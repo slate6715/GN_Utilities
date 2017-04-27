@@ -1,5 +1,8 @@
+#ifdef _WIN32
 #include "stdafx.h"
+#endif
 #include "OutStream.h"
+#include "miscutils.h"
 
 namespace util {
     

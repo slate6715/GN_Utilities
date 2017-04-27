@@ -5,7 +5,9 @@
  * Created on October 1, 2012, 2:13 PM
  */
 
+#ifdef _WIN32
 #include "stdafx.h"
+#endif
 #include <cstring>
 #include <algorithm>
 #include <stdio.h>

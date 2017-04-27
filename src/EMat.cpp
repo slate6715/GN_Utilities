@@ -5,7 +5,9 @@
  * Created on October 3, 2012, 11:12 AM
  */
 
+#ifdef _WIN32
 #include "stdafx.h"
+#endif
 
 #ifdef USE_OPENCV
 

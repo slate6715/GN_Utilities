@@ -5,9 +5,13 @@
  * Created on October 30, 2012, 8:29 AM
  */
 
+#ifdef _WIN32
 #include "stdafx.h"
+#endif
 #include "TarReader.h"
 #include "TarFile.h"
+#include <cstdlib>
+#include "miscutils.h"
 
 namespace util {
     

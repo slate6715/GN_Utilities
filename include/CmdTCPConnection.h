@@ -68,4 +68,6 @@ namespace util {
 
 } // Namespace util
 
+#ifdef _WIN32
 #include "../src/CmdTCPConnection.cpp"
+#endif

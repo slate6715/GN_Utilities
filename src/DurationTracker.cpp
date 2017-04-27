@@ -5,11 +5,14 @@
  * Created on October 10, 2012, 1:29 PM
  */
 
+#ifdef _WIN32
 #include "stdafx.h"
+#endif
 #include "DurationTracker.h"
 #include <cassert>
 #include <ctime>
 #include <limits>
+#include <sstream>
 
 #ifdef WIN32
 #undef max

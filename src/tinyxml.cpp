@@ -22,7 +22,9 @@ must not be misrepresented as being the original software.
 distribution.
 */
 
+#ifdef _WIN32
 #include "stdafx.h"
+#endif
 
 #ifdef TIXML_USE_STL
 #include <sstream>

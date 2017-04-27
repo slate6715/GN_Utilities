@@ -5,7 +5,9 @@
  * Created on September 26, 2012, 11:33 AM
  */
 
+#ifdef _WIN32
 #include "stdafx.h"
+#endif
 
 #ifdef USE_MYSQL
 

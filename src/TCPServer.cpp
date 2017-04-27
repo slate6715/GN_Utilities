@@ -41,7 +41,7 @@ namespace util {
 	template <class ConnClass>
 	void TCPServer<ConnClass>::start_accept()
 	{
-		ConnClass::cptr listen_socket = ConnClass::create(_io);
+		typename ConnClass::cptr listen_socket = ConnClass::create(_io);
 
 		_acceptor->async_accept(listen_socket->socket(),
 			boost::bind(&TCPServer::handle_accept, this, listen_socket,

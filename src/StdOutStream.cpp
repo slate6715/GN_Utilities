@@ -5,8 +5,11 @@
  * Created on October 5, 2012, 4:28 PM
  */
 
+#ifdef _WIN32
 #include "stdafx.h"
+#endif
 #include "StdOutStream.h"
+#include <iostream>
 
 using namespace std;
 

@@ -7,9 +7,11 @@
 
 
  // Precompiled headers
+#ifdef _WIN32
 #include "stdafx.h"
+#endif
 
-using namespace util;
+// #using namespace util;
 
 #ifdef USE_WORDNET
 

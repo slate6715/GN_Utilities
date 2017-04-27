@@ -1,6 +1,10 @@
+#ifdef _WIN32
 #include "stdafx.h"
+#endif
 #include "TCPConnection.h"
+#include <iostream>
 #include <boost/lexical_cast.hpp>
+#include "miscutils.h"
 
 using boost::asio::ip::tcp;
 
@@ -203,8 +207,9 @@ namespace util {
 				if (remaining < bytes_transferred) {
 					_bulk_buf.insert(_bulk_buf.end(), _read_buf.begin(), _read_buf.begin() + remaining);
 					_read_buf.erase(_read_buf.begin(), _read_buf.begin() + remaining);
-					addto_readlist(std::vector<unsigned char>(_read_buf.begin() + remaining, 
-								_read_buf.begin() + bytes_transferred), bytes_transferred - remaining);
+				    std::vector<unsigned char> rlist(_read_buf.begin() + remaining,
+                                _read_buf.begin() + bytes_transferred);
+					addto_readlist(rlist, bytes_transferred - remaining); 
 				}
 				else {
 					_bulk_buf.insert(_bulk_buf.end(), _read_buf.begin(), _read_buf.begin() + bytes_transferred);
@@ -338,7 +343,7 @@ namespace util {
 		return retval;
 	}
 
-	std::unique_ptr<std::vector<uchar>> TCPConnection::get_next_buf_uchar() {
+	std::unique_ptr<std::vector<unsigned char>> TCPConnection::get_next_buf_uchar() {
 		if (_read_list.size() <= 0) {
 			throw util::RuntimeException("get_next_buf_uchar called on empty read stack.");
 		}

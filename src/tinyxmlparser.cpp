@@ -24,11 +24,12 @@ distribution.
 
 // George Noel:  This version has been altered from the original author's version for compatability reasons
 
-#pragma once
-
+#ifdef _WIN32
 #include "stdafx.h"
+#endif
 
 #include "tinyxml.h"
+#include <cstddef>
 
 //#define DEBUG_PARSER
 #if defined( DEBUG_PARSER )

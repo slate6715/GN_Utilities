@@ -22,7 +22,9 @@ distribution.
 */
 
 // (George Noel)  This source has been modified slightly to fit in this library
+#ifdef _WIN32
 #include "stdafx.h"
+#endif
 
 #ifndef TIXML_USE_STL
 

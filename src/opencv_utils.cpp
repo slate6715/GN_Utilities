@@ -1,4 +1,6 @@
+#ifdef _WIN32
 #include "stdafx.h"
+#endif
 
 #ifdef USE_OPENCV
 #include "opencv2/opencv.hpp"

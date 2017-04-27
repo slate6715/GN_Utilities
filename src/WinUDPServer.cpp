@@ -1,6 +1,5 @@
+#ifdef _WIN32
 #include "stdafx.h"
-
-#ifdef WIN32
 
 #include "WinUDPServer.h"
 

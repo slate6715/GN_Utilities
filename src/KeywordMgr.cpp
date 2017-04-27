@@ -5,13 +5,16 @@
  * Created on March 22, 2013, 9:52 AM
  */
 
+#ifdef _WIN32
 #include "stdafx.h"
+#endif
 
 #ifndef _WIN32
 
 #include <regex.h>
 #include "KeywordMgr.h"
 #include "miscutils.h"
+#include <sstream>
 
 namespace util {
     

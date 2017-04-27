@@ -1,4 +1,4 @@
-#include "..\include\CmdTCPConnection.h"
+#include "CmdTCPConnection.h"
 #include <boost/property_tree/json_parser.hpp>
 #include <boost/lexical_cast.hpp>
 #include "miscutils.h"

@@ -5,7 +5,9 @@
  * Created on September 26, 2012, 11:29 AM
  */
 
+#ifdef _WIN32
 #include "stdafx.h"
+#endif
 #include "DBase.h"
 
 namespace util {
