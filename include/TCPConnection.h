@@ -1,5 +1,7 @@
 #pragma once
 
+#ifdef USE_BOOST // This class must have boost
+
 #include <boost/asio.hpp>
 #include <boost/enable_shared_from_this.hpp>
 #include <boost/bind.hpp>
@@ -151,3 +153,4 @@ namespace util {
 
 }
 
+#endif // ifdef BOOST

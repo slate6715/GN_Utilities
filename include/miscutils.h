@@ -12,7 +12,10 @@
 #include <string>
 #include <fstream>
 #include <limits>
+
+#ifdef USE_BOOST
 #include <boost/asio/io_service.hpp>
+#endif
 
 #if defined(_WIN32) && defined(USE_MFC)
 #include <afx.h>

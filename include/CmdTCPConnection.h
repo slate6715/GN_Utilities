@@ -1,4 +1,7 @@
 #pragma once
+
+#ifdef USE_BOOST // Requires the boost library
+
 #include "TCPConnection.h"
 #include <boost/property_tree/ptree.hpp>
 #include "Image.h"
@@ -71,3 +74,5 @@ namespace util {
 #ifdef _WIN32
 #include "../src/CmdTCPConnection.cpp"
 #endif
+
+#endif // ifdef USE_BOOST

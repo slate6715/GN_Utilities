@@ -1,3 +1,5 @@
+#ifdef USE_BOOST
+
 #ifdef _WIN32
 #include "stdafx.h"
 #endif
@@ -21,3 +23,5 @@ namespace util {
 
 
 }
+
+#endif // ifdef USE_BOOST

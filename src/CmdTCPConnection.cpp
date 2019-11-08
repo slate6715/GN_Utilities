@@ -1,3 +1,5 @@
+#ifdef USE_BOOST // Requires boost library to work
+
 #include "CmdTCPConnection.h"
 #include <boost/property_tree/json_parser.hpp>
 #include <boost/lexical_cast.hpp>
@@ -172,3 +174,5 @@ namespace util {
 #endif
 
 } // Namespace util
+
+#endif // ifdef USE_BOOST
